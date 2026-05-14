@@ -5,19 +5,25 @@ import { route } from "./routes/user.route.js";
 const app = express();
 const PORT = 3000;
 
-app.use(express.json())
+app.use(express.json());
 
-app.get("/" , (req, res) => {
-    res.send("Hello World")
+// Static Folder
+app.use("/images", express.static("public/images"));
+
+app.get("/", (req, res) => {
+  res.send("Hello World");
 });
 
-app.use(route)
+// User Routes
+app.use("/api/user", route);
 
-dataBase().then(() => {
+// Database + Server
+dataBase()
+  .then(() => {
     app.listen(PORT, () => {
-        console.log(`Server Connected On Port ${PORT}`);
-    })
-}).catch((error) => {
+      console.log(`Server Running On Port ${PORT}`);
+    });
+  })
+  .catch((error) => {
     console.log(error);
-    
-})
+  });
