@@ -1,6 +1,8 @@
 import { User } from "../models/user.model.js";
 
-export const userRegister =async (req, res) => {
+export const userRegister = async (req, res) => {
+    console.log("Request Body:", req.body);
+    console.log("Uploaded File:", req.file);
     try {
       const { userName, email, password } = req.body;
 
@@ -38,3 +40,4 @@ export const userRegister =async (req, res) => {
       });
     }
 };
+
