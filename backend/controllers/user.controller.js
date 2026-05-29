@@ -13,7 +13,7 @@ export const userRegister = async (req, res) => {
         });
       }
 
-      // Check Existing User
+o      // Check Existing User
       const existingUser = await User.findOne({ email });
 
       if (existingUser) {
