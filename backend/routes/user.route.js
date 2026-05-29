@@ -21,6 +21,6 @@ const upload = multer({ storage });
 // Register Route
 route.post(
   "/register",
-  upload.single("imag"),
+  upload.single("image"),
   userRegister
 );
