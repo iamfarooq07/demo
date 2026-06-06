@@ -41,3 +41,17 @@ o      // Check Existing User
     }
 };
 
+export const userLogin = async (req, res) => {
+  try {
+    const {email, password , avater} = req.body;
+
+    if(!email || !password || ! avater){
+      return res.status(401).json({message : "Please All Field Access"})
+    };
+
+    const existin = await bcrypt.compare(password, hashPassword);
+  } catch (error) {
+    
+  }
+}
+
