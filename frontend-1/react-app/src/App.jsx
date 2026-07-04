@@ -18,7 +18,7 @@ function App() {
     <div className="min-h-screen bg-akro-dark text-akro-light flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-md bg-akro p-6 rounded-2xl shadow-xl border border-gray-800">
         <h1 className="text-2xl font-bold mb-6 text-center tracking-wide">
-          Task Manager
+          Todo App
         </h1>
 
         <form onSubmit={addSubmit} className="flex gap-2 mb-6">
